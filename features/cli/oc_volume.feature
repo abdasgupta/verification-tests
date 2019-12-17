@@ -18,7 +18,8 @@ Feature: oc_volume.feature
     Then the step should succeed
     When I run the :run client command with:
       | name         | mydc                  |
-      | image        | <%= project_docker_repo %>aosqe/hello-openshift |
+      | image        | <%= project_docker_repo %>openshifttests/hello-openshift:busybox |
+      #      | image        | <%= project_docker_repo %>aosqe/hello-openshift |
     Then the step should succeed
     Given a pod becomes ready with labels:
       | deployment=mydc-1 |
@@ -52,7 +53,8 @@ Feature: oc_volume.feature
     Given I have a project
     When I run the :run client command with:
       | name   | mydc                 |
-      | image  | <%= project_docker_repo %>openshift/hello-openshift |
+      | image  | <%= project_docker_repo %>openshifttests/hello-openshift |
+      #| image  | <%= project_docker_repo %>openshift/hello-openshift |
     Then the step should succeed
     When I run the :secrets client command with:
       | action | new             |
@@ -105,7 +107,8 @@ Feature: oc_volume.feature
     Given I have a project
     And I run the :run client command with:
       | name      | mydc              |
-      | image     | <%= project_docker_repo %>openshift/hello-openshift |
+      | image     | <%= project_docker_repo %>openshifttests/hello-openshift |
+      #| image     | <%= project_docker_repo %>openshift/hello-openshift |
       | -l        | label=mydc        |
     Then the step should succeed
     Given a pod becomes ready with labels:
