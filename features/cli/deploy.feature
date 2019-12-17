@@ -34,7 +34,8 @@ Feature: deployment related features
   Scenario: Manually make deployment
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/manual.json |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/deployment/manual.json |
+    #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/manual.json |
     Then the step should succeed
     When I run the :rollout_status client command with:
       | resource | deploymentConfig |
@@ -445,7 +446,8 @@ Feature: deployment related features
   Scenario: Recreate deployment strategy
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift/origin/master/examples/deployment/recreate-example.yaml |
+    #| f | https://raw.githubusercontent.com/openshift/origin/master/examples/deployment/recreate-example.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/origin/ppc64le/examples/deployment/recreate-example.yaml |
     Then the step should succeed
     And I wait until the status of deployment "recreate-example" becomes :complete
     When I use the "recreate-example" service
@@ -686,7 +688,8 @@ Feature: deployment related features
   Scenario: Support verbs of Deployment in OpenShift
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/extensions/deployment.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/deployment/extensions/deployment.yaml |
+    #      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/extensions/deployment.yaml |
     Then the step should succeed
     When I run the :scale client command with:
       | resource | deployment      |
@@ -763,7 +766,8 @@ Feature: deployment related features
   Scenario: Auto cleanup old RCs
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/tc532411/history-limit-dc.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/deployment/tc532411/history-limit-dc.yaml |
+    #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/deployment/tc532411/history-limit-dc.yaml |
     Then the step should succeed
     When I run the steps 3 times:
     """
