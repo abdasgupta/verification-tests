@@ -7,7 +7,8 @@ Feature: Container test feature
   Scenario: Setuid binaries shouldn't work inside of a running container
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/pods/pod-setuid.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/pods/pod-setuid.yaml |
+    #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/pods/pod-setuid.yaml |
     Then the step should succeed
     Given the pod named "test-setuid" becomes ready
     And I execute on the pod:
