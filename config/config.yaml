@@ -67,9 +67,10 @@ environments:
     # set users in OPENSHIFT_ENV_ORIGIN_USER_MANAGER_USERS=user:password,...
     # user_manager_users: joe:redhat,alice:redhat
     cli: SharedLocalCliExecutor
-    # cli: SharedLocalCliExecutor
-    admin_creds: MasterOsAdminCredentials
-    api_port: 8443
+    #admin_creds: MasterOsAdminCredentials
+    admin_creds: AutoKubeconfigCredentials
+    admin_creds_spec: file:///root/.kube/config
+    api_port: 6443
   ocp4: &ocp4
     # hosts: use OPENSHIFT_ENV_OSE_HOSTS=host:role1:...,host2:role1:...
     hosts_type: OCDebugAccessibleHost
