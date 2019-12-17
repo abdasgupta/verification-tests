@@ -73,7 +73,8 @@ Feature: hpa scale
   Scenario: Creates autoscaler for replication controller by oc autoscale
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/hpa/rc-hello-openshift.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/hpa/rc-hello-openshift.yaml |
+    #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/hpa/rc-hello-openshift.yaml |
     Then the step should succeed
     Given I wait until replicationController "hello-openshift" is ready
     When I run the :autoscale client command with:
