@@ -18,7 +18,8 @@ Feature: Downward API
   Scenario: downward api pod name and pod namespace as env variables
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/downwardapi/tc483203/downward-example.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/downwardapi/tc483203/downward-example.yaml |
+    #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/downwardapi/tc483203/downward-example.yaml |
     Then the step should succeed
     And the pod named "dapi-test-pod" status becomes :succeeded
     When I run the :logs client command with:
@@ -34,7 +35,7 @@ Feature: Downward API
   Scenario: Container consume infomation from the downward API using a volume plugin
     Given I have a project
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/downwardapi/pod-dapi-volume.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/downwardapi/pod-dapi-volume.yaml |
     Then the step should succeed
     Given the pod named "pod-dapi-volume" becomes ready
     When I execute on the pod:
