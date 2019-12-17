@@ -21,7 +21,8 @@ Feature: configMap
       | special.how  |
       | special.type |
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-env.yaml |
+          | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/configmap/pod-configmap-env.yaml |
+    #      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-env.yaml |
     Then the step should succeed
     And the pod named "dapi-test-pod" status becomes :succeeded
     When I run the :logs client command with:
@@ -52,7 +53,8 @@ Feature: configMap
       | special.how  |
       | special.type |
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-volume1.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/configmap/pod-configmap-volume1.yaml |
+    #      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-volume1.yaml |
     Then the step should succeed
     And the pod named "dapi-test-pod-1" status becomes :succeeded
     When I run the :logs client command with:
@@ -61,7 +63,8 @@ Feature: configMap
     And the output should contain:
       | very |
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-volume2.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/configmap/pod-configmap-volume2.yaml |
+      #  | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-volume2.yaml |
     Then the step should succeed
     And the pod named "dapi-test-pod-2" status becomes :succeeded
     When I run the :logs client command with:
@@ -130,7 +133,8 @@ Feature: configMap
       | special.how  |
       | special.type |
     When I run the :create client command with:
-      | f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-command.yaml |
+      | f | https://raw.githubusercontent.com/abdasgupta/v3-testfiles/ppc64le/configmap/pod-configmap-command.yaml |
+      #| f | https://raw.githubusercontent.com/openshift-qe/v3-testfiles/master/configmap/pod-configmap-command.yaml |
     Then the step should succeed
     And the pod named "dapi-test-pod" status becomes :succeeded
     When I run the :logs client command with:
